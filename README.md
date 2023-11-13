@@ -2,6 +2,8 @@
 
 Welcome to the Digital Clock project! This simple web application displays a digital clock with additional features.
 
+## Demo
+View Live Demo [Digital Clock](https://digital-clock-bysaiful.netlify.app/)
 ## Features
 
 ### 1. Digital Clock Display

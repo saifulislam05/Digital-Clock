@@ -1,0 +1,44 @@
+ .day {
+     background-image: url(/Day.jpg);
+ }
+
+ .night {
+     background-image: url(/night.jpg);
+ }
+
+ body {
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+ }
+
+ .greeting-container {
+     animation: bounce .8s infinite;
+     -webkit-animation: bounce .8s infinite;
+}
+
+ @keyframes bounce {
+
+
+     0%{
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+}
+50%{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+100%{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+ }

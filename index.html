@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Digital Clock</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="icons8-clock-64.png" type="image/x-icon">
+
+    <link href="/dist/output.css" rel="stylesheet">
+
+    <script defer src="script.js"></script>
+</head>
+
+<body class="w-screen h-screen flex justify-center items-center">
+    <div class="w-fit flex flex-col items-center">
+        <h1 class="text-center text-4xl font-bold uppercase text-success">Digital Clock</h1>
+        <div class="grid grid-flow-col gap-5 text-center auto-cols-max my-6">
+            <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+                <span class="countdown font-mono text-5xl">
+                    <span id="hours" style="--value:00;"></span>
+                </span>
+                hours
+            </div>
+            <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+                <span class="countdown font-mono text-5xl">
+                    <span id="min" style="--value:00;"></span>
+                </span>
+                min
+            </div>
+            <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+                <span class="countdown font-mono text-5xl">
+                    <span id="sec" style="--value:00;"></span>
+                </span>
+                sec
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

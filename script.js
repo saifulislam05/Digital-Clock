@@ -2,56 +2,24 @@
 const hoursElement = document.getElementById("hours");
 const minutesElement = document.getElementById("min");
 const secondsElement = document.getElementById("sec");
-const millisecondsElement = document.getElementById("ms");
+const ampmElement = document.getElementById("ampm");
 
-// Btns Elements
+function updateClock() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, "0");
+  const minutes = now.getMinutes().toString().padStart(2, "0");
+  const seconds = now.getSeconds().toString().padStart(2, "0");
+  const ampm = hours >= 12 ? "PM" : "AM";
+  // Convert hours to 12-hour format
+//   hours = hours % 12 || 12;
+  hoursElement.style.setProperty("--value", hours);
+  minutesElement.style.setProperty("--value", minutes);
+  secondsElement.style.setProperty("--value", seconds);
+  ampmElement.innerText = ampm;
 
-const startBtn = document.getElementById("startBtn");
-const stopBtn = document.getElementById("stopBtn");
-const resetBtn = document.getElementById("resetBtn");
-
-let timer;
-let hours = 0;
-let minutes = 0;
-let seconds = 0;
-let milliseconds = 0;
-
-function startTimer() {
-    timer = setInterval(() => {
-        milliseconds += 100;
-        if (milliseconds === 1000) {
-            milliseconds = 0;
-            seconds++;
-            if (seconds === 60) {
-                seconds = 0;
-                minutes++;
-                if (minutes === 60) {
-                    minutes = 0;
-                    hours++;
-                }
-            }
-        }
-
-        updateUi();
-    }, 100)
+  // Schedule the next update after 1000 milliseconds (1 second)
+  setTimeout(updateClock, 1000);
 }
 
-function updateUi() {
-    hoursElement.style.setProperty("--value", hours);
-    minutesElement.style.setProperty("--value", minutes);
-    secondsElement.style.setProperty("--value", seconds);
-    millisecondsElement.textContent=milliseconds;
-}
-function stopTimer() {
-    clearInterval(timer);
-}
-function resetTimer() {
-    hours = 0;
-    minutes = 0;
-    seconds = 0;
-    milliseconds = 0;
-    updateUi();
-}
-startBtn.addEventListener("click", startTimer);
-stopBtn.addEventListener("click", stopTimer);
-resetBtn.addEventListener("click", resetTimer);
+// Initial update
+updateClock();
